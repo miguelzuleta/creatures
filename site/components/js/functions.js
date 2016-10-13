@@ -13,9 +13,3 @@ function newEl(parent, child, attrs, html){
   }
 
 }
-newEl(
-  '.creature',
-  'section',
-  { 'class': 'eye' },
-  'asd asd as das d'
-);

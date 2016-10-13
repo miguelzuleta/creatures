@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 %html{:lang => "en"}
-%head
-  %meta{:charset => "UTF-8"}/
-  %title Template
-  %link{:rel => "stylesheet", :href => "styles.css"}/
-%body
-  %div
-    %h1 Template
-    <!--=include includes/inc1.html -->
-%script(src = "js.js")
+  %head
+    %meta{:charset => "UTF-8"}/
+    %title Creatures
+    %link{:rel => "stylesheet", :href => "styles.css"}/
+  %body
+    %h1 Creatures
+    .creature-dude.wrap
+      - 3.times do
+        .creature.dude
+    .creature-alien.wrap
+      - 2.times do
+        .creature.alien
+    .creature-minion.wrap
+      - 4.times do
+        .creature.minion
+  %script(src = "js.js")

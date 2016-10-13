@@ -38,7 +38,7 @@ gulp.task('haml', function(){
 	gulp.src('site/components/haml/raw/**/*.haml')
 		.pipe(haml({
 		  trace: true
-		}))
+		}).on('error', function(e) { console.log(e.message); }))
 		.pipe(gulp.dest('site/components/haml/processed'));
 
 	gulp.src('site/components/haml/processed/*.html')
@@ -86,8 +86,8 @@ gulp.task('sass', function(){
 
 gulp.task('js', function(){
 	gulp.src([
-		'site/components/js/script1.js',
-		'site/components/js/script2.js'
+		'site/components/js/functions.js',
+		'site/components/js/creatures.js'
 	])
 		.pipe(concat('js.js'))
 		.pipe(gIF(env !== 'envDev', uglify()))
