@@ -3,7 +3,7 @@ function newEl(parent, child, attrs, html){
 
   for (var i = 0; i < getParent.length; i++) {
     var newChild = document.createElement(child);
-    newChild.innerHTML = html;
+    html === undefined ? newChild.innerHTML : '';
 
     for(var key in attrs){
       newChild.setAttribute(key, attrs[key]);
@@ -11,11 +11,9 @@ function newEl(parent, child, attrs, html){
 
     getParent[i].appendChild(newChild);
   }
-
 }
 newEl(
   '.creature',
-  'section',
-  { 'class': 'eye' },
-  'asd asd as das d'
+  'div',
+  { 'class': 'face' }
 );
