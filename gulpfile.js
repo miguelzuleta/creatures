@@ -1,4 +1,4 @@
-var gulp         = require('gulp'),
+var gulp       = require('gulp'),
 	haml         = require('gulp-ruby-haml'),
 	htmlmin      = require('gulp-htmlmin'),
 	sass         = require('gulp-sass'),
