@@ -1,19 +1,15 @@
-.face {
+.dude *{
   color: red;
 }
 
-.nee {
-  color: blue;
+.alien *{
+  color: green;
 }
 
-aside {
-  background-color: yellow;
+.pupil:after{
+  content:'OO';
 }
 
-[data-empty] {
-  background-color: black;
-  color: pink;
-  &:after{
-    content: ' this tag has no class';
-  }
+.looney:after{
+  content:' oO';
 }

@@ -1,6 +1,13 @@
-person('body')
+creature('.dude')
   .face({
-    eyes: 'both',
-    looneyEyes: true
+    eyes: 1,
+    looneyEyes: true,
   })
+  .arms()
   .torso();
+
+creature('.alien')
+  .face({
+    looneyEyes: true,
+    eyes: 3
+  });

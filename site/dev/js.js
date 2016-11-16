@@ -1,11 +1,11 @@
-function newEl(option){
-  var getParent = document.querySelectorAll(option.parent || 'body');
+function newEl(el){
+  var getParent = document.querySelectorAll(el.parent || 'body');
 
   for (var i = 0; i < getParent.length; i++) {
-    var newChild = document.createElement(option.child || 'div');
-    newChild.innerHTML = option.html || '';
+    var newChild = document.createElement(el.child || 'div');
+    newChild.innerHTML = el.html || '';
 
-    var childAttrs = option.attrs || {};
+    var childAttrs = el.attrs || {};
     for(var key in childAttrs){
       newChild.setAttribute(key, childAttrs[key]);
     }
@@ -14,32 +14,42 @@ function newEl(option){
   }
 }
 
-var person = (function(element){
+var creature = (function(element){
 
-  var face = function(parts){
+  if(element === undefined) element = 'body';
+
+  var face = function(faceParts){
 
     newEl({
       parent: element,
       attrs: { 'class': 'face'},
-      html: '(ツ)'
+      html: '(◕‿◕)'
     });
 
-    if(parts === undefined){
-      parts = {
-        eyes: 'left'
-      }
-    }
+    var faceEye = 0,
+        faceLooneyEyes = '';
 
-    var faceEye = (parts.eyes === 'both') ? ['left', 'right'] : [parts.eyes],
-        faceLooneyEyes = (parts.looneyEyes === undefined) ? '' : ' looney';
+    if(faceParts.eyes > 0) faceEye = faceParts.eyes;
+    if(faceParts.looneyEyes === true) faceLooneyEyes = 'looney ';
 
-    for (var i = 0; i < faceEye.length; i++) {
+    for (var i = 1; i < faceEye + 1; i++) {
       newEl({
         parent: element + ' .face',
-        attrs: { 'class': faceEye[i] + faceLooneyEyes + ' eye' },
-        html: faceEye[i] + ' eye'
+        attrs: { 'class': 'eye eye-' + i },
+        html: 'eye ' + i + '<span class="' + faceLooneyEyes + 'pupil"></span>'
       });
     }
+
+    return this;
+  }
+
+  var arms = function(){
+
+    newEl({
+      parent: element,
+      attrs: { 'class': 'arms' },
+      html: 'ARM'
+    });
 
     return this;
   }
@@ -48,7 +58,6 @@ var person = (function(element){
 
     newEl({
       parent: element,
-      child: 'aside',
       attrs: { 'class': 'torso' },
       html: 'TORSO'
     });
@@ -58,13 +67,21 @@ var person = (function(element){
 
   return {
     face: face,
-    torso: torso
+    torso: torso,
+    arms: arms
   }
 
 });
-person('body')
+creature('.dude')
   .face({
-    eyes: 'both',
-    looneyEyes: true
+    eyes: 1,
+    looneyEyes: true,
   })
+  .arms()
   .torso();
+
+creature('.alien')
+  .face({
+    looneyEyes: true,
+    eyes: 3
+  });

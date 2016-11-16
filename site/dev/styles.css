@@ -1,25 +1,19 @@
 /* line 1, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-.face {
+.dude * {
   color: red;
 }
 
 /* line 5, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-.nee {
-  color: blue;
+.alien * {
+  color: green;
 }
 
 /* line 9, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-aside {
-  background-color: yellow;
+.pupil:after {
+  content: 'OO';
 }
 
 /* line 13, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-[data-empty] {
-  background-color: black;
-  color: pink;
-}
-
-/* line 16, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-[data-empty]:after {
-  content: ' this tag has no class';
+.looney:after {
+  content: ' oO';
 }
