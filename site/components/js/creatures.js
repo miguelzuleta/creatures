@@ -1,4 +1,6 @@
-person('.creature.random')
-  .face().eyes();
-  // .torso();
-person('.creature.random').torso();
+person('body')
+  .face({
+    eyes: 'both',
+    looneyEyes: true
+  })
+  .torso();

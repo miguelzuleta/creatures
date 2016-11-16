@@ -16,7 +16,7 @@ function newEl(option){
 
 var person = (function(element){
 
-  var face = function(){
+  var face = function(parts){
 
     newEl({
       parent: element,
@@ -24,22 +24,21 @@ var person = (function(element){
       html: '(ツ)'
     });
 
-    var eyes = function(){
-
-      var eye = ['left', 'right'];
-
-      for (var i = 0; i < eye.length; i++) {
-        newEl({
-          parent: element + ' .face',
-          attrs: { 'class': eye[i] + ' eye' },
-          html: 'O'
-        });
+    if(parts === undefined){
+      parts = {
+        eyes: 'left'
       }
-
     }
 
-    return {
-      eyes: eyes
+    var faceEye = (parts.eyes === 'both') ? ['left', 'right'] : [parts.eyes],
+        faceLooneyEyes = (parts.looneyEyes === undefined) ? '' : ' looney';
+
+    for (var i = 0; i < faceEye.length; i++) {
+      newEl({
+        parent: element + ' .face',
+        attrs: { 'class': faceEye[i] + faceLooneyEyes + ' eye' },
+        html: faceEye[i] + ' eye'
+      });
     }
 
     return this;
@@ -50,8 +49,8 @@ var person = (function(element){
     newEl({
       parent: element,
       child: 'aside',
-      attrs: { 'class': 'torso nee' },
-      html: 'x'
+      attrs: { 'class': 'torso' },
+      html: 'TORSO'
     });
 
     return this;
@@ -63,7 +62,9 @@ var person = (function(element){
   }
 
 });
-person('.creature.random')
-  .face().eyes();
-  // .torso();
-person('.creature.random').torso();
+person('body')
+  .face({
+    eyes: 'both',
+    looneyEyes: true
+  })
+  .torso();

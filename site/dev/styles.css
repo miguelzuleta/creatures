@@ -21,5 +21,5 @@ aside {
 
 /* line 16, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
 [data-empty]:after {
-  content: ' this shit has no class';
+  content: ' this tag has no class';
 }

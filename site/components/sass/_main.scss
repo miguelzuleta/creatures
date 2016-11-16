@@ -1,19 +1,19 @@
-.face{
+.face {
   color: red;
 }
 
-.nee{
+.nee {
   color: blue;
 }
 
-aside{
+aside {
   background-color: yellow;
 }
 
-[data-empty]{
+[data-empty] {
   background-color: black;
   color: pink;
   &:after{
-    content: ' this shit has no class';
+    content: ' this tag has no class';
   }
 }
