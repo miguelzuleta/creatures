@@ -1,0 +1,25 @@
+/* line 1, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.face {
+  color: red;
+}
+
+/* line 5, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.nee {
+  color: blue;
+}
+
+/* line 9, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+aside {
+  background-color: yellow;
+}
+
+/* line 13, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+[data-empty] {
+  background-color: black;
+  color: pink;
+}
+
+/* line 16, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+[data-empty]:after {
+  content: ' this shit has no class';
+}

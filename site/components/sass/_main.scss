@@ -1,0 +1,19 @@
+.face{
+  color: red;
+}
+
+.nee{
+  color: blue;
+}
+
+aside{
+  background-color: yellow;
+}
+
+[data-empty]{
+  background-color: black;
+  color: pink;
+  &:after{
+    content: ' this shit has no class';
+  }
+}
