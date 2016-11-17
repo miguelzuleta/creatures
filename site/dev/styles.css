@@ -1,19 +1,79 @@
 /* line 1, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 7, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
 .dude * {
   color: red;
 }
 
-/* line 5, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+/* line 11, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
 .alien * {
   color: green;
 }
 
-/* line 9, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-.pupil:after {
-  content: 'OO';
+/* line 15, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.minion * {
+  color: orange;
 }
 
-/* line 13, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
-.looney:after {
-  content: ' oO';
+/* line 19, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.random * {
+  color: purple;
+}
+
+/* line 23, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.eye {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 26, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.eye .pupil {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* line 32, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.eye .pupil:after {
+  content: '*';
+}
+
+/* line 37, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.eye .looney:after {
+  color: yellow;
+  background-color: black;
+  font-size: 200%;
+}
+
+/* line 45, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.arm {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* line 49, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.hand {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+/* line 55, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.leg {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* line 59, /Users/migzulet/Documents/study/creatures/site/components/sass/_main.scss */
+.foot {
+  position: absolute;
+  top: 5px;
 }

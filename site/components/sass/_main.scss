@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .dude *{
   color: red;
 }
@@ -6,10 +12,51 @@
   color: green;
 }
 
-.pupil:after{
-  content:'OO';
+.minion *{
+  color: orange;
 }
 
-.looney:after{
-  content:' oO';
+.random *{
+  color: purple;
+}
+
+.eye {
+  position: relative;
+  display: inline-block;
+  .pupil {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &:after{
+      content:'*';
+    }
+  }
+
+  .looney:after{
+    color: yellow;
+    background-color: black;
+    font-size: 200%;
+  }
+}
+
+
+.arm{
+  margin-bottom: 20px;
+  position: relative;
+}
+.hand{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.leg{
+  margin-bottom: 20px;
+  position: relative;
+}
+.foot{
+  position: absolute;
+  top: 5px;
 }
